@@ -25,7 +25,16 @@ class TestMain(unittest.TestCase):
         score = self.jeu.tour(3,0)
         self.assertEqual(score, 16)
 
+    def test_jouer_un_strike_puis_2_3_equal_22(self):
+        self.jeu.tour(10, 0)
+        score = self.jeu.tour(3, 3)
+        self.assertEqual(score, 22)
 
+    def test_jouer_2_strikes_puis_2_3_equal_45(self):
+        self.jeu.tour(10, 0)
+        self.jeu.tour(10, 0)
+        score = self.jeu.tour(3, 3)
+        self.assertEqual(score, 45)
 
 
 if __name__ == '__main__':
